@@ -4,22 +4,11 @@ call plug#begin()
 "================================================
 Plug 'austintaylor/vim-indentobject'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-endwise'
-" Plug 'RRethy/nvim-treesitter-endwise'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'junegunn/vim-easy-align'
-Plug 'pedrohdz/vim-yaml-folds'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'bootleq/vim-cycle'
 
 Plug 'ssh://git@gitlab.abagile.com:7788/chiao.chuang/vim-abagile.git'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Navigation
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
 
@@ -31,54 +20,11 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-dispatch'
 Plug 'bootleq/vim-qrpsqlpq'
 Plug 'thinca/vim-quickrun', {'commit': 'c980977f1d77b3285937b9d7b5baa964fc9ed7f5'}
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
 Plug 'majutsushi/tagbar'
-
-" Plug 'janko-m/vim-test'
-
-"================================================
-" Autocomplete
-"================================================
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-"================================================
-" Javascript/HTML
-"================================================
-Plug 'kchmck/vim-coffee-script'
-" Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-ragtag'
-Plug 'ap/vim-css-color'
-
-"================================================
-" Git
-"================================================
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-
-"================================================
-" Theme
-"================================================
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'Mofiqul/vscode.nvim', { 'branch': 'main' }
-Plug 'joshdick/onedark.vim', { 'branch': 'main' }
-
-"================================================
-" Ruby/Rails
-"================================================
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
 
 "================================================
 " Clojure
 "================================================
-Plug 'luochen1990/rainbow'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
@@ -90,116 +36,10 @@ Plug 'clojure-vim/vim-jack-in'
 
 call plug#end()
 
-"================================================
-" General
-"================================================
-" :help options
-" set expandtab                                                " expand tabs to spaces
-" set hidden                                                   " allow you to switch between buffers without saving
-" set ignorecase                                               " case-insensitive search
-" set nocursorline
-" set nohlsearch
-" set noswapfile                                               " disable .swp files creation in vim
-" set nowrap
 set nrformats+=alpha
-" set number                                                   " show line numbers
-" set relativenumber
-" set scrolloff=3                                              " show context above/below cursorline
-" set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
-" set showcmd
-" set smartcase                                                " case-sensitive search if any caps
-" set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
-" set splitright
-" set tabstop=8                                                " actual tabs occupy 8 characters
-" set undofile
-" set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
-" set wildmode=longest,list,full
 
-" set colorcolumn=80
-"
 syntax on
 filetype plugin indent on
-
-au BufNewFile,BufRead ssh_config,*/.ssh/config.d/*  setf sshconfig
-
-" https://github.com/neovim/neovim/issues/7994#issuecomment-388296360
-au InsertLeave * set nopaste
-
-" fdoc is yaml
-autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
-autocmd BufRead,BufNewFile *.yml setlocal spell
-
-" slim is slim
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-
-" git commit textwidth limit
-autocmd Filetype gitcommit setlocal spell textwidth=72
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
-" autocmd FileType clojure setlocal iskeyword+=?,*,!,+,/,=,<,>,$
-autocmd FileType clojure setlocal iskeyword-=.
-autocmd FileType clojure setlocal iskeyword-=/
-
-"================================================
-" Remap
-"================================================
-" let mapleader = ','
-"
-" " discard direction keys
-" noremap  <up>    <nop>
-" noremap  <down>  <nop>
-" noremap  <left>  <nop>
-" noremap  <right> <nop>
-" inoremap <up>    <nop>
-" inoremap <down>  <nop>
-" inoremap <left>  <nop>
-" inoremap <right> <nop>
-"
-" " sometimes need, to repeat latest f, t, F or T in opposite direction
-" noremap \ ,
-"
-" " Helps when I want to delete something without clobbering my unnamed register.
-" nnoremap s "_d
-" nnoremap ss "_dd
-"
-" " navigating
-" noremap H ^
-" noremap L $
-" nmap j gj
-" nmap k gk
-" nnoremap ,gv V`]
-"
-" " Keeping it centered
-" nnoremap n nzzzv
-" nnoremap N Nzzzv
-" nnoremap J mzJ`z
-"
-" noremap <C-n> <C-i>
-"
-" " Don't copy the contents of an overwritten selection.
-" vnoremap p "_dP
-"
-" nnoremap Y yg_
-"
-" " moving text
-" vnoremap J :m '>+1<CR>gv=gv
-" vnoremap K :m '<-2<CR>gv=gv
-
-"================================================
-" Plugin
-"================================================
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
-
-" Disable documentation window
-set completeopt-=preview
-
-" rainbow
-let g:rainbow_active = 1
 
 " CtrlSF
 let g:ctrlsf_default_view_mode = 'compact'
@@ -225,17 +65,6 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
-
-" signify: default updatetime 4000ms is not good for async update signify
-set updatetime=100
-
-" extra rails.vim help
-autocmd User Rails silent! Rnavcommand job app/jobs -glob=**/* -suffix=_job.rb
-
-" NerdTree Setting
-let NERDTreeShowHidden=1
-let NERDTreeQuitOnOpen=1
-let g:NERDSpaceDelims=1
 
 " Vim-test
 " https://github.com/janko-m/vim-test#custom-strategies
@@ -281,22 +110,9 @@ let g:sexp_enable_insert_mode_mappings = 0
 "================================================
 " Shortcut
 "================================================
-nnoremap <leader>dd :NERDTreeToggle<CR>
-nnoremap <leader>df :NERDTreeFind<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call abagile#whitespace#strip_trailing()<CR>
 noremap <silent> <leader>V :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" fzf search
-" https://github.com/junegunn/fzf.vim#commands
-nnoremap <C-p> :GFiles<CR>
-" nnoremap <C-p> :Files <C-R>=expand('%:h')<CR><CR>
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fl :Files<CR>
-let g:fzf_preview_window = 'right:50%'
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
-
-" let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
 
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
