@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
--- vim.cmd [[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerSync
---   augroup end
--- ]]
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -38,11 +38,6 @@ packer.init {
   },
 }
 
--- require("indent_blankline").setup {
---     show_current_context = true,
---     show_current_context_start = true,
--- }
-
 return packer.startup(function()
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
@@ -52,6 +47,18 @@ return packer.startup(function()
   use { "akinsho/bufferline.nvim", tag = "v2.*"}
   use 'nvim-lualine/lualine.nvim'
   use "moll/vim-bbye"
+
+  -- Indent
+  use 'austintaylor/vim-indentobject'
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function ()
+      require('indent_blankline').setup {
+        show_current_context = true,
+        show_current_context_start = true,
+      }
+    end
+  }
 
   -- Commenting
   -- use 'tomtom/tcomment_vim'
@@ -84,6 +91,15 @@ return packer.startup(function()
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use {
+    'seblj/nvim-echo-diagnostics',
+    config = function()
+      require("echo-diagnostics").setup{
+        show_diagnostic_number = true,
+        show_diagnostic_source = false,
+      }
+    end
+  }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

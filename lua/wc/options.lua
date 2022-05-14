@@ -19,6 +19,7 @@ local options = {
   wildmode = 'longest,list,full',
   termguicolors = true,
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  updatetime=250,
 }
 
 vim.opt.wildignore =  'log/**,node_modules/**,target/**,tmp/**,*.rbc'
