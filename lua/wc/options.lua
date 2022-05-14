@@ -22,7 +22,12 @@ local options = {
 }
 
 vim.opt.wildignore =  'log/**,node_modules/**,target/**,tmp/**,*.rbc'
+vim.opt.list = true
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+-- default ignore comment and string in vim-easy-align
+vim.g.easy_align_ignore_groups = {}
+vim.g.tmux_navigator_disable_when_zoomed = 1

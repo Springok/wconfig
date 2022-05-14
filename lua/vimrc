@@ -128,104 +128,9 @@ nnoremap <leader>fo :CtrlSFOpen<CR>
 nnoremap <leader>ft :CtrlSFToggle<CR>
 inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 
-" in case you forgot to sudo
-cnoremap w!! %!sudo tee > /dev/null %
-
-" indenting
-noremap <leader>in mmgg=G'm
-
-" Insert Debugger
-autocmd FileType clojure nmap <buffer> <leader>p o(prn<Space>
-autocmd Filetype gitcommit nmap <buffer> <leader>p oSee merge request metis/nerv!
-nmap <leader>p obinding.pry<ESC>^
-
-" momeorized for multiple copy
-" nmap <leader>c "ay
-" nmap <leader>vv "ap
-
-" use system clipboard
-vnoremap <Leader>y "+y
-nnoremap <Leader>P "+p
-nnoremap <Leader>y "+y
-
-" window
-nmap <leader>w <C-w>
-nmap <leader>wf <C-w>f<C-w>H
-" nnoremap <Leader>+ :vertical resize +10<CR>
-" nnoremap <Leader>- :vertical resize -10<CR>
-
-" buffer switch
-nnoremap <silent> <tab> :bn<CR>
-nnoremap <silent> <S-tab> :bp<CR>
-
-" Note that remapping C-s requires flow control to be disabled (in .zshrc)
-nmap <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-vmap <C-s> <esc>:w<CR>
-
-" Close current buffer
-nmap <leader>q <esc>:bw<cr>
-imap <leader>q <esc>:bw<cr>
-
-" in all modes hit ,, can return to normal mode
-noremap  ,, <C-\><C-N>
-noremap!  ,, <C-\><C-N>
-
-" vim-signify (replace vim-gitgutter)
-nnoremap <leader>gg :SignifyToggle<CR>
-nnoremap <leader>gh :SignifyToggleHighlight<CR>
-nnoremap <leader>gdd :SignifyHunkDiff<CR>
-nnoremap <leader>gu :SignifyHunkUndo<CR>
-
-" fugitive
-set diffopt+=vertical
-
-nmap <silent><leader>gb :Git blame<cr>
-
-nmap <leader>ge :Gedit<Space>
-" nmap <leader>gdd :Gdiff<Space>
-" compare with working area
-nmap <leader>gdw :Gdiff<cr>
-" compare with index
-nmap <leader>gdi :Gdiff HEAD<cr>
-" reset the diff with working area in Gdiff mode
-" nmap <leader>gdr :diffget<cr>
-nmap <leader>gs :Git<cr>
-
-" Rails
-nmap <leader>aa :A<CR>
-nmap <leader>av :AV<CR>
-nmap <leader>gr :R<CR>
-nmap <leader>vl :sp<cr><C-^><cr>
-nmap <leader>hl :vsp<cr><C-^><cr>
-
-" Vim-test
-" nmap <silent> <leader><C-t> :TestNearest<CR>
-" nmap <silent> <leader><C-f> :TestFile<CR>
-" nmap <silent> <leader><C-l> :TestLast<CR>
-
 " abagile-test
 nnoremap <silent> <Leader>tl :call abagile#rails#test_tmux('h')
 nnoremap <silent> <Leader>tf :call abagile#rails#test_tmux('h', 1)
-
-" start interactive EasyAlign in visual mode
-vmap <Enter> <Plug>(EasyAlign)
-" start interactive EasyAlign for a motion/text object (e.g. <leader>eaip)
-nmap <leader>l <Plug>(EasyAlign)
-
-" Vim Tmux Navigator
-let g:tmux_navigator_disable_when_zoomed = 1
-
-" Vim Tmux Runner
-nnoremap <leader>ar :VtrAttachToPane<cr>
-nnoremap <leader>kr :VtrKillRunner<cr>
-nnoremap <leader>sl :VtrSendLinesToRunner<cr>
-nnoremap <leader>rt :VtrOpenRunner {'orientation': 'v', 'percentage': 15, 'cmd': 'rtw'}<cr>
-
-" run commands in vim
-nmap <leader>ss :!rpu<enter>
-nmap <leader>ks :!krpu<enter>
-" nmap <leader>cop :!cop<enter> FIXME: need to find a way to use cop in zshenv
 
 " vim-cycle
 nmap <silent> gs <Plug>CycleNext
@@ -234,72 +139,8 @@ vmap <silent> gs <Plug>CycleNext
 " vim.abagile
 let g:abagile_migrant_structure_fold = 1
 
-"================================================
-" Theme
-"================================================
-set termguicolors
-
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-
-" lightline
-set noshowmode
-set showtabline=2
-
-" let g:vscode_style = "dark"
-" colorscheme vscode
-
-colorscheme onedark
-
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'tabline': {
-      \   'left': [ ['buffers'] ],
-      \   'right': [ [''] ]
-      \ },
-      \ 'component_raw': {
-      \   'buffers': 1
-      \ },
-      \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
-      \ },
-      \ 'component_type': {
-      \   'buffers': 'tabsel'
-      \ }
-      \ }
-
-let g:lightline#bufferline#show_number     = 1
-let g:lightline#bufferline#enable_devicons = 1
-let g:lightline#bufferline#unnamed         = '[No Name]'
-
 " change SpellBad style, have to do this after colorscheme setup, otherwise will be overwritten
 hi SpellBad ctermbg=20
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "javascript" }, -- List of parsers to ignore installing
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust" },  -- list of language that will be disabled
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = { "ruby" },
-  }
-}
-
-vim.opt.list = true
-
-require("indent_blankline").setup {
-    show_current_context = true,
-    show_current_context_start = true,
-}
-EOF
 
 function! s:case_tx_subs_camel(w) "{{{
   let w = substitute(a:w, '-', '_', 'g')
