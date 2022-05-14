@@ -145,47 +145,47 @@ autocmd FileType clojure setlocal iskeyword-=/
 "================================================
 " Remap
 "================================================
-let mapleader = ','
-
-" discard direction keys
-noremap  <up>    <nop>
-noremap  <down>  <nop>
-noremap  <left>  <nop>
-noremap  <right> <nop>
-inoremap <up>    <nop>
-inoremap <down>  <nop>
-inoremap <left>  <nop>
-inoremap <right> <nop>
-
-" sometimes need, to repeat latest f, t, F or T in opposite direction
-noremap \ ,
-
-" Helps when I want to delete something without clobbering my unnamed register.
-nnoremap s "_d
-nnoremap ss "_dd
-
-" navigating
-noremap H ^
-noremap L $
-nmap j gj
-nmap k gk
-nnoremap ,gv V`]
-
-" Keeping it centered
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
-
-noremap <C-n> <C-i>
-
-" Don't copy the contents of an overwritten selection.
-vnoremap p "_dP
-
-nnoremap Y yg_
-
-" moving text
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+" let mapleader = ','
+"
+" " discard direction keys
+" noremap  <up>    <nop>
+" noremap  <down>  <nop>
+" noremap  <left>  <nop>
+" noremap  <right> <nop>
+" inoremap <up>    <nop>
+" inoremap <down>  <nop>
+" inoremap <left>  <nop>
+" inoremap <right> <nop>
+"
+" " sometimes need, to repeat latest f, t, F or T in opposite direction
+" noremap \ ,
+"
+" " Helps when I want to delete something without clobbering my unnamed register.
+" nnoremap s "_d
+" nnoremap ss "_dd
+"
+" " navigating
+" noremap H ^
+" noremap L $
+" nmap j gj
+" nmap k gk
+" nnoremap ,gv V`]
+"
+" " Keeping it centered
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
+" nnoremap J mzJ`z
+"
+" noremap <C-n> <C-i>
+"
+" " Don't copy the contents of an overwritten selection.
+" vnoremap p "_dP
+"
+" nnoremap Y yg_
+"
+" " moving text
+" vnoremap J :m '>+1<CR>gv=gv
+" vnoremap K :m '<-2<CR>gv=gv
 
 "================================================
 " Plugin
