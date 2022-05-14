@@ -68,6 +68,26 @@ nvim_tree.setup {
     ignore = true,
     timeout = 500,
   },
+  actions = {
+    use_system_clipboard = true,
+    change_dir = {
+      enable = true,
+      global = false,
+      restrict_above_cwd = false,
+    },
+    open_file = {
+      quit_on_open = true,
+      resize_window = false,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          buftype = { "nofile", "terminal", "help" },
+        },
+      },
+    },
+  },
   view = {
     width = 30,
     height = 30,
@@ -78,7 +98,7 @@ nvim_tree.setup {
       custom_only = false,
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
+        { key = "x", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
