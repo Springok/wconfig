@@ -65,6 +65,13 @@ return packer.startup(function()
   use "nvim-treesitter/playground"
   use "p00f/nvim-ts-rainbow"
 
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+  }
+
     -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -77,10 +84,6 @@ return packer.startup(function()
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets"
 
-  -- common
-  use 'tpope/vim-fugitive' -- Git commands
-  use {'tpope/vim-rails', ft = "ruby" } -- only load when opening Ruby file
-
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
@@ -91,11 +94,14 @@ return packer.startup(function()
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use 'tpope/vim-fugitive' -- Git commands
 
-  use 'junegunn/fzf'
-  use 'junegunn/fzf.vim'
+  -- Ruby
+  use {'tpope/vim-rails', ft = "ruby" } -- only load when opening Ruby file
+
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
+  use "tpope/vim-endwise"
   use 'junegunn/vim-easy-align'
   use 'pedrohdz/vim-yaml-folds'
 
