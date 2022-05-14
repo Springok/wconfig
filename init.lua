@@ -4,6 +4,7 @@ require "wc.plugins"
 require "wc.options"
 require "wc.cmp"
 require "wc.lsp"
+require "wc.telescope"
 
 vim.cmd "colorscheme onedark"
 
@@ -80,3 +81,10 @@ vim.keymap.set('v', "<Enter>", "<Plug>(EasyAlign)")
 vim.keymap.set('n', "<leader>l", "<Plug>(EasyAlign)")
 
 vim.keymap.set('n', "<leader>V", ":source ~/proj/wconfig/init.lua<CR>:echo 'vimrc reloaded'<CR>")
+
+-- Telescope
+keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
+keymap("n", "<leader>fl", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)

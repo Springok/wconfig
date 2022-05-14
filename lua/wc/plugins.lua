@@ -82,6 +82,10 @@ return packer.startup(function()
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
   use 'tpope/vim-repeat'
@@ -91,7 +95,6 @@ return packer.startup(function()
 
   use 'christoomey/vim-tmux-navigator'
   use 'christoomey/vim-tmux-runner'
-
 
   use 'itchyny/lightline.vim'
   use 'mengelbrecht/lightline-bufferline'
