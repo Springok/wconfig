@@ -14,11 +14,11 @@ telescope.setup {
 
     mappings = {
       i = {
-        ["<C-t>"] = actions.cycle_history_next,
-        ["<C-r>"] = actions.cycle_history_prev,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
 
-        ["<C-n>"] = actions.move_selection_next,
-        ["<C-p>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
 
         ["<C-c>"] = actions.close,
 
@@ -78,6 +78,15 @@ telescope.setup {
     },
   },
   pickers = {
+    buffers = {
+      theme = "ivy",
+    },
+    live_grep = {
+      theme = "ivy",
+    },
+    grep_string = {
+      theme = "ivy",
+    }
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
