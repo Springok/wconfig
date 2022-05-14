@@ -5,6 +5,7 @@ require "wc.options"
 require "wc.cmp"
 require "wc.lsp"
 require "wc.telescope"
+require "wc.treesitter"
 
 vim.cmd "colorscheme onedark"
 

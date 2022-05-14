@@ -53,14 +53,12 @@ return packer.startup(function()
   }
 
   -- Highlights
-  -- use {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   requires = {
-  --     'nvim-treesitter/nvim-treesitter-refactor',
-  --     'RRethy/nvim-treesitter-textsubjects',
-  --   },
-  --   run = '<cmd>TSUpdate'
-  -- }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  use "nvim-treesitter/playground"
+  use "p00f/nvim-ts-rainbow"
 
     -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
