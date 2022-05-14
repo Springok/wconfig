@@ -1,7 +1,10 @@
 local indent, width = 2, 80
 -- Lua modules are found inside a lua/ folder in your 'runtimepath' (for most users, this will mean ~/.config/nvim/lua
-require('wc.plugins')
-require('wc.options')
+require "wc.plugins"
+require "wc.options"
+require "wc.cmp"
+
+vim.cmd "colorscheme onedark"
 
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }

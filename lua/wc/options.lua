@@ -17,7 +17,8 @@ local options = {
   undofile = true,
   smartindent = true, -- Insert indents automatically
   wildmode = 'longest,list,full',
-
+  termguicolors = true,
+  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
 }
 
 vim.opt.wildignore =  'log/**,node_modules/**,target/**,tmp/**,*.rbc'
