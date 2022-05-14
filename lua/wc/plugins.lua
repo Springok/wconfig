@@ -44,6 +44,9 @@ return packer.startup(function()
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
+  use { "akinsho/bufferline.nvim", tag = "v2.*"}
+  use 'nvim-lualine/lualine.nvim'
+  use "moll/vim-bbye"
 
   -- Commenting
   -- use 'tomtom/tcomment_vim'
@@ -99,8 +102,7 @@ return packer.startup(function()
   use 'christoomey/vim-tmux-navigator'
   use 'christoomey/vim-tmux-runner'
 
-  use 'itchyny/lightline.vim'
-  use 'mengelbrecht/lightline-bufferline'
+  -- use 'itchyny/lightline.vim'
   use {'Mofiqul/vscode.nvim', branch = 'main' }
   use {'joshdick/onedark.vim', branch = 'main' }
 

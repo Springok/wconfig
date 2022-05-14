@@ -8,6 +8,8 @@ require "wc.telescope"
 require "wc.treesitter"
 require "wc.gitsigns"
 require "wc.nvim-tree"
+require "wc.bufferline"
+require "wc.lualine"
 
 vim.cmd "colorscheme onedark"
 
