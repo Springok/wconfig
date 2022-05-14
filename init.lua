@@ -7,6 +7,7 @@ require "wc.lsp"
 require "wc.telescope"
 require "wc.treesitter"
 require "wc.gitsigns"
+require "wc.nvim-tree"
 
 vim.cmd "colorscheme onedark"
 
@@ -90,3 +91,7 @@ keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>",
 keymap("n", "<leader>fl", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+
+-- NvimTree
+keymap("n", "<leader>dd", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>df", ":NvimTreeFindFile<cr>", opts)

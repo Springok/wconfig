@@ -42,6 +42,8 @@ return packer.startup(function()
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
 
   -- Commenting
   -- use 'tomtom/tcomment_vim'
@@ -99,7 +101,6 @@ return packer.startup(function()
 
   use 'itchyny/lightline.vim'
   use 'mengelbrecht/lightline-bufferline'
-  use 'ryanoasis/vim-devicons'
   use {'Mofiqul/vscode.nvim', branch = 'main' }
   use {'joshdick/onedark.vim', branch = 'main' }
 
