@@ -3,6 +3,7 @@ local indent, width = 2, 80
 require "wc.plugins"
 require "wc.options"
 require "wc.cmp"
+require "wc.lsp"
 
 vim.cmd "colorscheme onedark"
 
