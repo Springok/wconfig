@@ -129,9 +129,9 @@ return packer.startup(function()
   use 'christoomey/vim-tmux-navigator'
   use 'christoomey/vim-tmux-runner'
 
-  -- use 'itchyny/lightline.vim'
   use {'Mofiqul/vscode.nvim', branch = 'main' }
   use {'joshdick/onedark.vim', branch = 'main' }
+  use "projekt0n/github-nvim-theme"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

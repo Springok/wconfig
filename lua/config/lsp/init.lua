@@ -3,5 +3,5 @@ if not status_ok then
   return
 end
 
-require "wc.lsp.configs"
-require("wc.lsp.handlers").setup()
+require "config.lsp.configs"
+require("config.lsp.handlers").setup()
