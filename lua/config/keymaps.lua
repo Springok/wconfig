@@ -104,7 +104,9 @@ keymap("n", "<leader>wf", "<C-w>f<C-w>H", opts)
 keymap("n", "<tab>", ":bn<CR>", opts)
 keymap("n", "<S-tab>", ":bp<CR>", opts)
 
--- Note that remapping C-s requires flow control to be disabled (in .zshrc) keymap("n", "<C-s>", "<esc>:w<CR>", opts) keymap("i", "<C-s>", "<esc>:w<CR>", opts)
+-- Note that remapping C-s requires flow control to be disabled (in .zshrc)
+keymap("n", "<C-s>", "<esc>:w<CR>", opts)
+keymap("i", "<C-s>", "<esc>:w<CR>", opts)
 keymap("v", "<C-s>", "<esc>:w<CR>", opts)
 
 -- Close current buffer

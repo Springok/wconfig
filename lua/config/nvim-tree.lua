@@ -42,6 +42,11 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
+  filters = {
+    dotfiles = true,
+    custom = {},
+    exclude = {},
+  },
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
