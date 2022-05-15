@@ -7,10 +7,10 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
+    file_ignore_patterns = { "vendor/" },
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    path_display = { "absolute" },
 
     mappings = {
       i = {
@@ -107,4 +107,3 @@ telescope.setup {
 }
 
 telescope.load_extension('fzf')
-
