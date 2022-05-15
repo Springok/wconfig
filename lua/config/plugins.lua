@@ -128,6 +128,7 @@ return packer.startup(function()
 
   -- Ruby
   use {'tpope/vim-rails', ft = "ruby" } -- only load when opening Ruby file
+  use 'tpope/vim-bundler'
 
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
