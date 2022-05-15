@@ -14,5 +14,6 @@ require "config.autocommands"
 require "config.keymaps"
 require "impatient"
 
-vim.cmd "colorscheme onedark"
+-- vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme tokyonight]]
 
