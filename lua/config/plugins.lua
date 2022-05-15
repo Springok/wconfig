@@ -30,13 +30,13 @@ if not status_ok then
 end
 
 -- Have packer use a popup window
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
-}
+-- packer.init {
+--   display = {
+--     open_fn = function()
+--       return require("packer.util").float { border = "rounded" }
+--     end,
+--   },
+-- }
 
 return packer.startup(function()
   use 'wbthomason/packer.nvim' -- Packer can manage itself
@@ -139,6 +139,11 @@ return packer.startup(function()
   use {'Mofiqul/vscode.nvim', branch = 'main' }
   use {'joshdick/onedark.vim', branch = 'main' }
   use "projekt0n/github-nvim-theme"
+
+  -- Clojure, Lisp
+  use "gpanders/nvim-parinfer"
+  use "guns/vim-sexp"
+  use "tpope/vim-sexp-mappings-for-regular-people"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

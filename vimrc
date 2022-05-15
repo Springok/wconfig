@@ -16,9 +16,6 @@ Plug 'thinca/vim-quickrun', {'commit': 'c980977f1d77b3285937b9d7b5baa964fc9ed7f5
 "================================================
 " Clojure
 "================================================
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-fireplace' " Navigating and Comprehending
 " Plug 'clojure-vim/clojure.vim'
 
