@@ -146,6 +146,8 @@ return packer.startup(function()
   use "gpanders/nvim-parinfer"
   use "guns/vim-sexp"
   use "tpope/vim-sexp-mappings-for-regular-people"
+  use 'Olical/conjure'
+  use 'clojure-vim/vim-jack-in'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

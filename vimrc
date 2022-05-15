@@ -13,15 +13,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'bootleq/vim-qrpsqlpq'
 Plug 'thinca/vim-quickrun', {'commit': 'c980977f1d77b3285937b9d7b5baa964fc9ed7f5'}
 
-"================================================
-" Clojure
-"================================================
-Plug 'tpope/vim-fireplace' " Navigating and Comprehending
-" Plug 'clojure-vim/clojure.vim'
-
-Plug 'Olical/conjure'
-Plug 'clojure-vim/vim-jack-in'
-
 call plug#end()
 
 set nrformats+=alpha
@@ -74,17 +65,6 @@ if executable('psql')
   let g:qrpsqlpq_expanded_format_max_lines = -1
   autocmd FileType sql call s:init_qrpsqlpq()
 endif
-
-" Conjure
-let g:conjure#log#hud#width = 0.7
-let g:conjure#log#hud#height = 0.7
-let g:conjure#log#hud#anchor = "SE"
-let g:conjure#highlight#enable = 'true'
-" let g:conjure#mapping#prefix = ",c"
-let g:conjure#log#botright = 'true'
-nnoremap ,ccs :ConjureShadowSelect app<CR>
-
-let g:sexp_enable_insert_mode_mappings = 0
 
 "================================================
 " Shortcut

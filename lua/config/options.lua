@@ -33,3 +33,5 @@ end
 vim.g.easy_align_ignore_groups = {}
 vim.g.tmux_navigator_disable_when_zoomed = 1
 vim.g.abagile_migrant_structure_fold = 1
+
+vim.g.sexp_enable_insert_mode_mappings = 0
