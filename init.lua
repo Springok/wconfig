@@ -11,6 +11,7 @@ require "config.bufferline"
 require "config.lualine"
 require "config.autocommands"
 require "config.keymaps"
+require "impatient"
 
 vim.cmd "colorscheme onedark"
 

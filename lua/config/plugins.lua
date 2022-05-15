@@ -48,6 +48,8 @@ return packer.startup(function()
   use 'nvim-lualine/lualine.nvim'
   use "moll/vim-bbye"
 
+  use 'lewis6991/impatient.nvim'
+
   use "ssh://git@gitlab.abagile.com:7788/chiao.chuang/vim-abagile.git"
 
   -- Navigation
