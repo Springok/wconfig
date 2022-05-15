@@ -2,13 +2,7 @@ call plug#begin()
 "================================================
 " Enhance Vim
 "================================================
-Plug 'austintaylor/vim-indentobject'
-Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'bootleq/vim-cycle'
-
-" Navigation
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-unimpaired'
 
 "================================================
 " Dev Tools
@@ -18,7 +12,6 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-dispatch'
 Plug 'bootleq/vim-qrpsqlpq'
 Plug 'thinca/vim-quickrun', {'commit': 'c980977f1d77b3285937b9d7b5baa964fc9ed7f5'}
-Plug 'majutsushi/tagbar'
 
 "================================================
 " Clojure
@@ -99,7 +92,6 @@ let g:sexp_enable_insert_mode_mappings = 0
 "================================================
 " Shortcut
 "================================================
-nnoremap <leader>] :TagbarToggle<CR>
 noremap <silent> <leader>V :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 command! -bang -nargs=* Rg
