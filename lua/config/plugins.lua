@@ -47,6 +47,7 @@ return packer.startup(function()
   use { "akinsho/bufferline.nvim", tag = "v2.*"}
   use 'nvim-lualine/lualine.nvim'
   use "moll/vim-bbye"
+  use "ssh://git@gitlab.abagile.com:7788/chiao.chuang/vim-abagile.git"
 
   -- Indent
   use 'austintaylor/vim-indentobject'

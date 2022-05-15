@@ -6,8 +6,6 @@ Plug 'austintaylor/vim-indentobject'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'bootleq/vim-cycle'
 
-Plug 'ssh://git@gitlab.abagile.com:7788/chiao.chuang/vim-abagile.git'
-
 " Navigation
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-unimpaired'
@@ -66,15 +64,6 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
-" Vim-test
-" https://github.com/janko-m/vim-test#custom-strategies
-" let test#strategy = "vtr"
-let test#ruby#minitest#options = '--verbose'
-
-" vim-easy-align
-" override default ignore comment and string in vim-easy-align
-let g:easy_align_ignore_groups = []
-
 " run sql file to give your the result table!
 " usage: <leader_key>p + j, l, r
 function! s:init_qrpsqlpq()
@@ -111,7 +100,6 @@ let g:sexp_enable_insert_mode_mappings = 0
 " Shortcut
 "================================================
 nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader><space> :call abagile#whitespace#strip_trailing()<CR>
 noremap <silent> <leader>V :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 command! -bang -nargs=* Rg
@@ -128,16 +116,9 @@ nnoremap <leader>fo :CtrlSFOpen<CR>
 nnoremap <leader>ft :CtrlSFToggle<CR>
 inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 
-" abagile-test
-nnoremap <silent> <Leader>tl :call abagile#rails#test_tmux('h')
-nnoremap <silent> <Leader>tf :call abagile#rails#test_tmux('h', 1)
-
 " vim-cycle
 nmap <silent> gs <Plug>CycleNext
 vmap <silent> gs <Plug>CycleNext
-
-" vim.abagile
-let g:abagile_migrant_structure_fold = 1
 
 " change SpellBad style, have to do this after colorscheme setup, otherwise will be overwritten
 hi SpellBad ctermbg=20

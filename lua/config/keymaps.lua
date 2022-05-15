@@ -137,3 +137,7 @@ keymap("n", "<leader>gs",  ":Git<cr>", opts)
 -- " reset the diff with working area in Gdiff mode
 -- " nmap <leader>gdr :diffget<cr>
 
+keymap("n", "<leader><space>",  ":call abagile#whitespace#strip_trailing()<cr>", opts)
+
+keymap("n", "<Leader>tl", ":call abagile#rails#test_tmux('h')", opts)
+keymap("n", "<Leader>tf", ":call abagile#rails#test_tmux('h', 1)", opts)
