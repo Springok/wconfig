@@ -85,6 +85,8 @@ return packer.startup(function()
   }
   use "nvim-treesitter/playground"
   use "p00f/nvim-ts-rainbow"
+  use 'slim-template/vim-slim'
+  use 'andymass/vim-matchup'
 
   use {
     'norcalli/nvim-colorizer.lua',

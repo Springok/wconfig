@@ -20,6 +20,8 @@ local options = {
   termguicolors = true,
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   updatetime=250,
+  -- foldmethod="expr",
+  -- foldexpr="nvim_treesitter#foldexpr()",
 }
 
 vim.opt.wildignore =  'log/**,node_modules/**,target/**,tmp/**,*.rbc'
@@ -35,3 +37,10 @@ vim.g.tmux_navigator_disable_when_zoomed = 1
 vim.g.abagile_migrant_structure_fold = 1
 
 vim.g.sexp_enable_insert_mode_mappings = 0
+
+-- vim.g.do_filetype_lua = 1
+-- vim.filetype.add({
+--   filename = {
+--     ['*.thor'] = 'ruby',
+--   },
+-- })
