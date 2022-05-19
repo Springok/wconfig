@@ -8,7 +8,6 @@ Plug 'bootleq/vim-cycle'
 " Dev Tools
 "================================================
 Plug 'dyng/ctrlsf.vim'
-Plug 'dense-analysis/ale'
 Plug 'tpope/vim-dispatch'
 Plug 'bootleq/vim-qrpsqlpq'
 Plug 'thinca/vim-quickrun', {'commit': 'c980977f1d77b3285937b9d7b5baa964fc9ed7f5'}
@@ -28,22 +27,6 @@ let g:ctrlsf_mapping = {
 \ "split"   : "gi",
 \ "vsplit"  : "gs"
 \ }
-
-" Ale =========
-let g:ale_linters = {
-\   'ruby': ['rubocop', 'ruby'],
-\   'clojure': ['clj-kondo'],
-\}
-
-" https://github.com/dense-analysis/ale/pull/1850, make it work with bundle
-let g:ale_ruby_rubocop_executable = 'bundle'
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier'],
-\   'css': ['prettier'],
-\}
-let g:ale_fix_on_save = 1
 
 " run sql file to give your the result table!
 " usage: <leader_key>p + j, l, r

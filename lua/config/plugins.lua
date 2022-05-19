@@ -117,6 +117,8 @@ return packer.startup(function()
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "jose-elias-alvarez/null-ls.nvim"
+
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

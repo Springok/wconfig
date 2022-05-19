@@ -19,6 +19,7 @@ require "config.lualine"
 require "config.conjure"
 require "config.autocommands"
 require "config.keymaps"
+require "config.null-ls"
 
 -- vim.cmd[[colorscheme onedark]]
 vim.cmd[[colorscheme tokyonight]]
