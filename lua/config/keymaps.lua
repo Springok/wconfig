@@ -115,7 +115,7 @@ keymap("i", "<leader>q", "<esc>:bw<cr>", opts)
 
 --  in all modes hit ,, can return to normal mode
 keymap("n", ",,", "<C-\\><C-N>", opts)
-keymap("n", ",,", "<C-\\><C-N>", opts)
+keymap("i", ",,", "<C-\\><C-N>", opts)
 
 -- run commands in vim
 keymap("n", "<leader>ss", ":!rpu<enter>", opts)

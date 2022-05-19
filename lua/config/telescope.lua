@@ -7,7 +7,7 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { "vendor/" },
+    file_ignore_patterns = { "vendor/", "migrate_archive", "snippets", "image"},
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "absolute" },
