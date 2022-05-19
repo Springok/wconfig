@@ -142,8 +142,9 @@ return packer.startup(function()
   use 'christoomey/vim-tmux-runner'
 
   use {'Mofiqul/vscode.nvim', branch = 'main' }
-  use {'joshdick/onedark.vim', branch = 'main' }
+  use 'navarasu/onedark.nvim'
   use 'folke/tokyonight.nvim'
+  use {'marko-cerovac/material.nvim', branch = 'main'}
   -- use "projekt0n/github-nvim-theme"
 
   -- Clojure, Lisp
