@@ -133,7 +133,7 @@ return packer.startup(function()
   use 'tpope/vim-fugitive' -- Git commands
 
   -- Ruby
-  use {'tpope/vim-rails', ft = "ruby" } -- only load when opening Ruby file
+  use 'tpope/vim-rails' -- only load when opening Ruby file
   use 'tpope/vim-bundler'
 
   use 'tpope/vim-repeat'

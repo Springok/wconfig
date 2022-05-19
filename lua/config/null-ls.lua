@@ -18,6 +18,6 @@ null_ls.setup({
     formatting.rubocop,
     formatting.cljstyle,
     completion.spell,
-    diagnostics.trail_spa
+    diagnostics.trail_space
   },
 })
