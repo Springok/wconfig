@@ -52,6 +52,8 @@ return packer.startup(function()
 
   use "ssh://git@gitlab.abagile.com:7788/chiao.chuang/vim-abagile.git"
 
+  use "McAuleyPenney/tidy.nvim"
+
   -- Navigation
   use 'tpope/vim-projectionist'
   use 'tpope/vim-unimpaired'
