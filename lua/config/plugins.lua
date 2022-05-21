@@ -88,6 +88,7 @@ return packer.startup(function()
   use "nvim-treesitter/playground"
   use "p00f/nvim-ts-rainbow"
   use 'slim-template/vim-slim'
+  use 'kchmck/vim-coffee-script'
   use 'andymass/vim-matchup'
 
   use {
@@ -121,7 +122,7 @@ return packer.startup(function()
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "jose-elias-alvarez/null-ls.nvim"
+  use "jose-elias-alvarez/null-ls.nvim" -- ale
 
 
   -- Telescope
