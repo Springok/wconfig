@@ -7,7 +7,7 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { "vendor/", "migrate_archive", "snippets", "image"},
+    file_ignore_patterns = { "vendor/", "migrate_archive", "snippets", "image", ".lsp/", ".clj-kondo/"},
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "absolute" },
@@ -45,7 +45,7 @@ telescope.setup {
       },
 
       n = {
-        ["<esc>"] = actions.close,
+        ["<C-c>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
