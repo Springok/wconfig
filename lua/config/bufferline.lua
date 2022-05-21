@@ -35,7 +35,7 @@ bufferline.setup {
     max_name_length = 18,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 18,
-    diagnostics = false, -- | "nvim_lsp" | "coc",
+    diagnostics = "nvim_lsp", -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
     -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
     --   return "("..count..")"
@@ -56,10 +56,10 @@ bufferline.setup {
     --     return true
     --   end
     -- end,
-    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+   offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
     show_buffer_icons = true,
-    show_buffer_close_icons = true,
-    show_close_icon = true,
+    show_buffer_close_icons = false,
+    show_close_icon = false,
     show_tab_indicators = true,
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
@@ -67,7 +67,7 @@ bufferline.setup {
     separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
     enforce_regular_tabs = true,
     always_show_bufferline = true,
-    sort_by = 'insert_after_current',
+    sort_by = 'id',
     -- sort_by = 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
     --   -- add custom logic
     --   return buffer_a.modified > buffer_b.modified
