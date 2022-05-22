@@ -89,6 +89,7 @@ keymap("c", "w!!", "%!sudo tee > /dev/null %", opts)
 
 -- indenting
 keymap("n", "<leader>in", "mmgg=G'm", opts)
+keymap("n", "<Leader>it", ":IndentBlanklineToggle<cr>", opts)
 keymap("n", "<leader>p", "obinding.pry<ESC>^", term_opts)
 
 -- use system clipboard

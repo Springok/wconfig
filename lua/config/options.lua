@@ -38,6 +38,25 @@ vim.g.abagile_migrant_structure_fold = 1
 
 vim.g.sexp_enable_insert_mode_mappings = 0
 
+-- tokyo night, https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/colors.lua
+
+vim.cmd [[highlight IndentBlanklineIndent1 guibg=#292e42 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guibg=#24283b gui=nocombine]]
+
+require("indent_blankline").setup {
+  show_current_context = true,
+  show_current_context_start = true,
+  char = "",
+  char_highlight_list = {
+    "IndentBlanklineIndent1",
+    "IndentBlanklineIndent2",
+  },
+  space_char_highlight_list = {
+    "IndentBlanklineIndent1",
+    "IndentBlanklineIndent2",
+  },
+}
+
 -- vim.g.do_filetype_lua = 1
 -- vim.filetype.add({
 --   filename = {
