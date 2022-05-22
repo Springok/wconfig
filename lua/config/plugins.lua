@@ -52,11 +52,14 @@ return packer.startup(function()
 
   use "ssh://git@gitlab.abagile.com:7788/chiao.chuang/vim-abagile.git"
 
+  -- Remove spacing
   use "McAuleyPenney/tidy.nvim"
 
   -- Navigation
   use 'tpope/vim-projectionist'
   use 'tpope/vim-unimpaired'
+
+  -- Tagbar alternative
   use 'simrat39/symbols-outline.nvim'
 
   -- Indent
@@ -80,17 +83,18 @@ return packer.startup(function()
     end
   }
 
-  -- Highlights
+  -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
   use "nvim-treesitter/playground"
+
+  -- highlight parenthesis
   use "p00f/nvim-ts-rainbow"
-  use 'slim-template/vim-slim'
-  use 'kchmck/vim-coffee-script'
   use 'andymass/vim-matchup'
 
+  -- CSS #fff
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
@@ -98,13 +102,21 @@ return packer.startup(function()
     end
   }
 
-    -- cmp plugins
+  -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets"
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "jose-elias-alvarez/null-ls.nvim" -- ale alternative
   use {
     'seblj/nvim-echo-diagnostics',
     config = function()
@@ -114,16 +126,6 @@ return packer.startup(function()
       }
     end
   }
-
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets"
-
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "jose-elias-alvarez/null-ls.nvim" -- ale
-
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -136,6 +138,8 @@ return packer.startup(function()
   -- Ruby
   use 'tpope/vim-rails' -- only load when opening Ruby file
   use 'tpope/vim-bundler'
+  use 'kchmck/vim-coffee-script'
+  use 'slim-template/vim-slim'
 
   use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
