@@ -14,11 +14,6 @@ Plug 'thinca/vim-quickrun', {'commit': 'c980977f1d77b3285937b9d7b5baa964fc9ed7f5
 
 call plug#end()
 
-set nrformats+=alpha
-
-syntax on
-filetype plugin indent on
-
 " CtrlSF
 let g:ctrlsf_default_view_mode = 'compact'
 let g:ctrlsf_ignore_dir = ['vendor/assets', 'public/eva/js/', 'cljs-runtime', 'node_modules', 'db']
@@ -71,9 +66,6 @@ inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 " vim-cycle
 nmap <silent> gs <Plug>CycleNext
 vmap <silent> gs <Plug>CycleNext
-
-" change SpellBad style, have to do this after colorscheme setup, otherwise will be overwritten
-hi SpellBad ctermbg=20
 
 function! s:case_tx_subs_camel(w) "{{{
   let w = substitute(a:w, '-', '_', 'g')

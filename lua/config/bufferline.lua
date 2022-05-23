@@ -74,51 +74,51 @@ bufferline.setup {
     -- end
   },
   -- tokyonight
-  highlights = {
-    fill = {
-      guifg = { attribute = "fg", highlight = "#ff0000" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-    },
-    background = {
-      guifg = { attribute = "fg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-    },
-    -- buffer_selected = {
-    --   guifg = {attribute='fg',highlight='Normal'},
-    --   guibg = {attribute='bg',highlight='Normal'},
-    -- },
-    buffer_visible = {
-      guifg = { attribute = "fg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-    },
-    modified = {
-      guifg = { attribute = "fg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-    },
-    modified_selected = {
-      guifg = { attribute = "fg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "Normal" },
-    },
-    modified_visible = {
-      guifg = { attribute = "fg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-    },
-
-    separator = {
-      guifg = { attribute = "bg", highlight = "TabLine" },
-      guibg = { attribute = "bg", highlight = "TabLine" },
-    },
-    separator_selected = {
-      guifg = { attribute = "bg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "Normal" },
-    },
-    -- separator_visible = {
-    --   guifg = {attribute='bg',highlight='TabLine'},
-    --   guibg = {attribute='bg',highlight='TabLine'}
-    --   },
-    indicator_selected = {
-      guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-      guibg = { attribute = "bg", highlight = "Normal" },
-    },
-  },
+  -- highlights = {
+  --   fill = {
+  --     guifg = { attribute = "fg", highlight = "#ff0000" },
+  --     guibg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   background = {
+  --     guifg = { attribute = "fg", highlight = "TabLine" },
+  --     guibg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   -- buffer_selected = {
+  --   --   guifg = {attribute='fg',highlight='Normal'},
+  --   --   guibg = {attribute='bg',highlight='Normal'},
+  --   -- },
+  --   buffer_visible = {
+  --     guifg = { attribute = "fg", highlight = "TabLine" },
+  --     guibg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   modified = {
+  --     guifg = { attribute = "fg", highlight = "TabLine" },
+  --     guibg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   modified_selected = {
+  --     guifg = { attribute = "fg", highlight = "Normal" },
+  --     guibg = { attribute = "bg", highlight = "Normal" },
+  --   },
+  --   modified_visible = {
+  --     guifg = { attribute = "fg", highlight = "TabLine" },
+  --     guibg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --
+  --   separator = {
+  --     guifg = { attribute = "bg", highlight = "TabLine" },
+  --     guibg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   separator_selected = {
+  --     guifg = { attribute = "bg", highlight = "Normal" },
+  --     guibg = { attribute = "bg", highlight = "Normal" },
+  --   },
+  --   -- separator_visible = {
+  --   --   guifg = {attribute='bg',highlight='TabLine'},
+  --   --   guibg = {attribute='bg',highlight='TabLine'}
+  --   --   },
+  --   indicator_selected = {
+  --     guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
+  --     guibg = { attribute = "bg", highlight = "Normal" },
+  --   },
+  -- },
 }

@@ -7,7 +7,7 @@ local options = {
   swapfile = false,   -- disable .swp files creation in vim vim.opt.wrap = false
   number = true,      -- show line numbers
   relativenumber = true,
-  scrolloff = 3,      -- show context above/below cursorline
+  scrolloff = 8,      -- show context above/below cursorline
   shiftwidth = 2,     -- normal mode indentation commands use 2 spaces
   showcmd = true,
   smartcase  = true,  -- case-sensitive search if any caps
@@ -26,6 +26,8 @@ local options = {
 
 vim.opt.wildignore =  'log/**,node_modules/**,target/**,tmp/**,*.rbc'
 vim.opt.list = true
+vim.opt.nrformats = vim.opt.nrformats + "alpha"
+vim.opt.diffopt = vim.opt.diffopt + "vertical"
 
 for k, v in pairs(options) do
   vim.opt[k] = v
@@ -38,24 +40,10 @@ vim.g.abagile_migrant_structure_fold = 1
 
 vim.g.sexp_enable_insert_mode_mappings = 0
 
--- tokyo night, https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/colors.lua
+vim.cmd [[filetype plugin indent on]]
 
-vim.cmd [[highlight IndentBlanklineIndent1 guibg=#292e42 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guibg=#24283b gui=nocombine]]
-
-require("indent_blankline").setup {
-  show_current_context = true,
-  show_current_context_start = true,
-  char = "",
-  char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-  },
-  space_char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-  },
-}
+-- change SpellBad style, have to do this after colorscheme setup, otherwise will be overwritten
+vim.cmd [[hi SpellBad ctermbg=20]]
 
 -- vim.g.do_filetype_lua = 1
 -- vim.filetype.add({

@@ -21,8 +21,9 @@ require "config.autocommands"
 require "config.keymaps"
 require "config.null-ls"
 
--- vim.cmd[[colorscheme onedark]]
+vim.g.onedark_config = {style= "warmer"}
+vim.cmd[[colorscheme onedark]]
 -- vim.g.vscode_style = "dark"
 -- vim.cmd[[colorscheme vscode]]
-vim.cmd[[colorscheme tokyonight]]
+-- vim.cmd[[colorscheme tokyonight]]
 -- vim.cmd[[colorscheme material]]
