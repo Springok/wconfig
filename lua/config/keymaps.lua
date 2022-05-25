@@ -146,3 +146,6 @@ keymap("n", "<Leader>tl", ":call abagile#rails#test_tmux('h')", opts)
 keymap("n", "<Leader>tf", ":call abagile#rails#test_tmux('h', 1)", opts)
 
 keymap("n", "<Leader>]", ":SymbolsOutline<cr>", opts)
+
+-- Spectre, search and replace
+keymap("v", "<leader>fc", "<cmd>lua require('spectre').open_visual()<CR>", opts)

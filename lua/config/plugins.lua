@@ -52,6 +52,9 @@ return packer.startup(function()
 
   use "ssh://git@gitlab.abagile.com:7788/chiao.chuang/vim-abagile.git"
 
+  -- search and replace
+  use 'windwp/nvim-spectre'
+
   -- Remove spacing
   use "McAuleyPenney/tidy.nvim"
 
