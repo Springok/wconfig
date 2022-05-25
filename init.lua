@@ -7,7 +7,6 @@ else
 end
 
 require "config.plugins"
-require "config.options"
 require "config.cmp"
 require "config.lsp"
 require "config.telescope"
@@ -20,6 +19,7 @@ require "config.conjure"
 require "config.autocommands"
 require "config.keymaps"
 require "config.null-ls"
+require "config.options"
 
 vim.g.onedark_config = {style= "warmer"}
 vim.cmd[[colorscheme onedark]]
