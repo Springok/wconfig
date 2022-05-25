@@ -7,21 +7,11 @@ Plug 'bootleq/vim-cycle'
 "================================================
 " Dev Tools
 "================================================
-Plug 'dyng/ctrlsf.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'bootleq/vim-qrpsqlpq'
 Plug 'thinca/vim-quickrun', {'commit': 'c980977f1d77b3285937b9d7b5baa964fc9ed7f5'}
 
 call plug#end()
-
-" CtrlSF
-let g:ctrlsf_default_view_mode = 'compact'
-let g:ctrlsf_ignore_dir = ['vendor/assets', 'public/eva/js/', 'cljs-runtime', 'node_modules', 'db']
-let g:ctrlsf_indent = 2
-let g:ctrlsf_mapping = {
-\ "split"   : "gi",
-\ "vsplit"  : "gs"
-\ }
 
 " run sql file to give your the result table!
 " usage: <leader_key>p + j, l, r
@@ -47,21 +37,6 @@ endif
 "================================================
 " Shortcut
 "================================================
-noremap <silent> <leader>V :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-command! -bang -nargs=* Rg
-      \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-      \ fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
-
-" CtrlSF search (replace ag.vim)
-nmap     <leader>ff <Plug>CtrlSFPrompt
-nmap     <leader>fc <Plug>CtrlSFCwordExec
-vmap     <leader>ff <Plug>CtrlSFVwordPath
-vmap     <leader>fF <Plug>CtrlSFVwordExec
-nmap     <leader>fp <Plug>CtrlSFPwordPath
-nnoremap <leader>fo :CtrlSFOpen<CR>
-nnoremap <leader>ft :CtrlSFToggle<CR>
-inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 
 " vim-cycle
 nmap <silent> gs <Plug>CycleNext
