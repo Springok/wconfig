@@ -14,8 +14,10 @@ null_ls.setup({
     diagnostics.rubocop.with({ -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/270
       command = "bundle",
       args = vim.list_extend({ "exec", "rubocop" }, diagnostics.rubocop._opts.args)}),
+    formatting.rubocop.with({ -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/270
+      command = "bundle",
+      args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args)}),
     diagnostics.clj_kondo,
-    formatting.rubocop,
     formatting.cljstyle,
     -- completion.spell,
     diagnostics.trail_space
