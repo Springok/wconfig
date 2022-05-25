@@ -25,7 +25,6 @@ local options = {
 }
 
 vim.opt.wildignore =  'log/**,node_modules/**,target/**,tmp/**,*.rbc'
-vim.opt.list = true
 vim.opt.nrformats = vim.opt.nrformats + "alpha"
 vim.opt.diffopt = vim.opt.diffopt + "vertical"
 
@@ -40,10 +39,17 @@ vim.g.abagile_migrant_structure_fold = 1
 
 vim.g.sexp_enable_insert_mode_mappings = 0
 
-vim.cmd [[filetype plugin indent on]]
-
 -- change SpellBad style, have to do this after colorscheme setup, otherwise will be overwritten
 vim.cmd [[hi SpellBad ctermbg=20]]
+
+
+-- indent_blankline
+vim.opt.list = true
+vim.g.indent_blankline_enabled = "v:false"
+require("indent_blankline").setup {
+    show_current_context = true,
+    show_current_context_start = true,
+}
 
 -- vim.g.do_filetype_lua = 1
 -- vim.filetype.add({
