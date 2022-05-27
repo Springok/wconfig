@@ -20,6 +20,7 @@ local options = {
   termguicolors = true,
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   updatetime=250,
+  signcolumn= "yes"
   -- foldmethod="expr",
   -- foldexpr="nvim_treesitter#foldexpr()",
 }
