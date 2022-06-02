@@ -42,7 +42,7 @@ vim.g.sexp_enable_insert_mode_mappings = 0
 
 -- change SpellBad style, have to do this after colorscheme setup, otherwise will be overwritten
 vim.cmd [[hi SpellBad ctermbg=20]]
-
+vim.cmd [[hi Winseparator guibg=none]]
 
 -- indent_blankline
 vim.opt.list = true
