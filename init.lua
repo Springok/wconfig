@@ -49,9 +49,10 @@ null_ls.setup({
     formatting.rubocop.with({
       command = "bundle",
       args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args)}),
-    diagnostics.clj_kondo,
     diagnostics.trail_space,
-    formatting.cljstyle,
+    -- clojure lsp supported by default
+    -- diagnostics.clj_kondo,
+    -- formatting.cljstyle,
   },
 })
 
