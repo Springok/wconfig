@@ -161,7 +161,7 @@ vim.cmd [[
   " autocmd FileType clojure setlocal iskeyword+=?,*,!,+,/,=,<,>,$
     autocmd FileType clojure setlocal iskeyword-=.
     autocmd FileType clojure setlocal iskeyword-=/
-    autocmd FileType clojure nmap <buffer> <leader>p o(prn<Space>
+    autocmd FileType clojure nmap <buffer> <leader>p o(debux.core/dbg<Space>
   augroup end
 ]]
 
