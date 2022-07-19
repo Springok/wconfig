@@ -161,7 +161,7 @@ vim.cmd [[
   " autocmd FileType clojure setlocal iskeyword+=?,*,!,+,/,=,<,>,$
     autocmd FileType clojure setlocal iskeyword-=.
     autocmd FileType clojure setlocal iskeyword-=/
-    autocmd FileType clojure nmap <buffer> <leader>p o(debux.core/dbg<Space>
+    autocmd FileType clojure nmap <buffer> <leader>p (debux.core/dbg<Space>
   augroup end
 ]]
 
@@ -197,8 +197,13 @@ keymap("n", "s", '"_d', opts)
 keymap("n", "ss", '"_dd', opts)
 
 -- " navigating
-keymap("n", "H", '^', opts)
-keymap("n", "L", '$', opts)
+vim.cmd [[
+  noremap H ^
+  noremap L $
+]]
+
+-- keymap("n", "H", '^', opts)
+-- keymap("n", "L", '$', opts)
 keymap("n", "j", 'gj', term_opts)
 keymap("n", "k", 'gk', term_opts)
 keymap("n", ",gv", 'V`', opts)
