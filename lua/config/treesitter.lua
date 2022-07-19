@@ -6,7 +6,8 @@ end
 configs.setup {
   ensure_installed = "all", -- one of "all", or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "" }, -- List of parsers to ignore installing
+  -- https://github.com/nvim-treesitter/nvim-treesitter/issues/2837
+  ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
   autopairs = {
     enable = true,
   },
