@@ -10,7 +10,7 @@ telescope.setup {
     file_ignore_patterns = { "vendor/", "migrate", "snippets", "image", ".lsp/", ".clj-kondo/"},
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "absolute" },
+    path_display = { "shorten" },
     vimgrep_arguments = {"rg", "--column", "--line-number", "--no-heading", "--color=never", "--ignore"},
 
     mappings = {
@@ -80,14 +80,21 @@ telescope.setup {
   },
   pickers = {
     buffers = {
-      theme = "ivy",
+      theme = "dropdown",
     },
     live_grep = {
-      theme = "ivy",
+      theme = "dropdown",
     },
     grep_string = {
+      theme = "dropdown",
+    },
+    git_files = {
       theme = "ivy",
-    }
+      previewer = false,
+    },
+    lsp_references = {
+      theme = "dropdown"
+    },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -97,14 +104,18 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
-      fzf = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+      },
+    },
+    fzf = {
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
       override_file_sorter = true,     -- override the file sorter
       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-    }
-    -- please take a look at the readme of the extension you want to configure
-  },
+    },
+  }
 }
 
+telescope.load_extension("ui-select")
 telescope.load_extension('fzf')
