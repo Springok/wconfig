@@ -45,6 +45,6 @@ configs.setup {
     },
   },
   matchup = {
-    enable = true,              -- mandatory, false will disable the whole extension
+    enable = true, -- mandatory, false will disable the whole extension
   },
 }

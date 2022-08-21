@@ -18,12 +18,12 @@ require "config.bufferline"
 -- ================
 --      Theme
 -- ================
--- vim.g.onedark_config = {style= "warmer"}
--- vim.cmd[[colorscheme onedark]]
+vim.g.onedark_config = {style= "warmer"}
+vim.cmd [[colorscheme onedark]]
 -- vim.g.vscode_style = "dark"
--- vim.cmd[[colorscheme vscode]]
-vim.cmd[[colorscheme tokyonight]]
--- vim.cmd[[colorscheme material]]
+-- vim.cmd [[colorscheme vscode]]
+-- vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme material]]
 
 -- =================
 --      Plugins
@@ -45,10 +45,10 @@ null_ls.setup({
   sources = {
     diagnostics.rubocop.with({
       command = "bundle",
-      args = vim.list_extend({ "exec", "rubocop" }, diagnostics.rubocop._opts.args)}),
+      args = vim.list_extend({ "exec", "rubocop" }, diagnostics.rubocop._opts.args) }),
     formatting.rubocop.with({
       command = "bundle",
-      args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args)}),
+      args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args) }),
     diagnostics.trail_space,
     -- clojure lsp supported by default
     -- diagnostics.clj_kondo,
@@ -60,30 +60,30 @@ null_ls.setup({
 --      Settings / options
 -- ============================
 local options = {
-  expandtab = true,   -- expand tabs to spaces
-  hidden = true,      -- allow you to switch between buffers without saving
-  ignorecase = true,  -- case-insensitive search
-  cursorline = false,
-  hlsearch = false,
-  swapfile = false,   -- disable .swp files creation in vim vim.opt.wrap = false
-  number = true,      -- show line numbers
+  expandtab      = true, -- expand tabs to spaces
+  hidden         = true, -- allow you to switch between buffers without saving
+  ignorecase     = true, -- case-insensitive search
+  cursorline     = false,
+  hlsearch       = false,
+  swapfile       = false, -- disable .swp files creation in vim vim.opt.wrap = false
+  number         = true, -- show line numbers
   relativenumber = true,
-  scrolloff = 8,      -- show context above/below cursorline
-  shiftwidth = 2,     -- normal mode indentation commands use 2 spaces
-  showcmd = true,
-  smartcase  = true,  -- case-sensitive search if any caps
-  softtabstop = 2,    -- insert mode tab and backspace use 2 spaces
-  splitright = true,
-  tabstop = 8,        -- actual tabs occupy 8 characters
-  undofile = true,
-  smartindent = true, -- Insert indents automatically
-  wildmode = 'longest,list,full',
-  termguicolors = true,
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-  updatetime = 250,
-  signcolumn = "yes",
-  wildignore =  'log/**,node_modules/**,target/**,tmp/**,*.rbc',
-  list = true
+  scrolloff      = 8, -- show context above/below cursorline
+  shiftwidth     = 2, -- normal mode indentation commands use 2 spaces
+  showcmd        = true,
+  smartcase      = true, -- case-sensitive search if any caps
+  softtabstop    = 2, -- insert mode tab and backspace use 2 spaces
+  splitright     = true,
+  tabstop        = 8, -- actual tabs occupy 8 characters
+  undofile       = true,
+  smartindent    = true, -- Insert indents automatically
+  wildmode       = 'longest,list,full',
+  termguicolors  = true,
+  completeopt    = { "menuone", "noselect" }, -- mostly just for cmp
+  updatetime     = 250,
+  signcolumn     = "yes",
+  wildignore     = 'log/**,node_modules/**,target/**,tmp/**,*.rbc',
+  list           = true
   -- foldmethod="expr",
   -- foldexpr="nvim_treesitter#foldexpr()",
 }
@@ -108,8 +108,8 @@ vim.g.abagile_migrant_structure_fold = 1
 -- indent_blankline
 vim.g.indent_blankline_enabled = "v:false"
 require("indent_blankline").setup {
-    show_current_context = true,
-    show_current_context_start = true,
+  show_current_context = true,
+  show_current_context_start = true,
 }
 
 -- sexp
@@ -133,7 +133,7 @@ vim.cmd [[
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
     autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-    autocmd BufNewFile,BufRead *.thor setlocal filetype=ruby
+    autocmd BufNewFile,BufRead *.thor,.pryrc setlocal filetype=ruby
     autocmd BufNewFile,BufRead ssh_config,*/.ssh/config.d/*  setf sshconfig
     " https://github.com/neovim/neovim/issues/7994#issuecomment-388296360
     autocmd InsertLeave * set nopaste
@@ -247,6 +247,7 @@ keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>
 keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<leader>fo", "<cmd>lua require('telescope.builtin').live_grep({grep_open_files=true})<cr>", opts)
 keymap("n", "<leader>fc", "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
+keymap("n", "<leader>dl", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
 
 -- NvimTree
 keymap("n", "<leader>dd", ":NvimTreeToggle<cr>", opts)
@@ -266,7 +267,7 @@ keymap("n", "<Leader>P", '"+p', opts)
 keymap("n", "<Leader>y", '"+y', opts)
 
 -- window
-keymap("n", "<leader>w",  "<C-w>", opts)
+keymap("n", "<leader>w", "<C-w>", opts)
 keymap("n", "<leader>wf", "<C-w>f<C-w>H", opts)
 
 -- buffer switch
@@ -299,11 +300,11 @@ keymap("n", "<leader>hl", ":vsp<cr><C-^><cr>", opts)
 
 -- Git related plugins,
 -- fugitive
-keymap("n", "<leader>gb",  ":Git blame<cr>", opts)
+keymap("n", "<leader>gb", ":Git blame<cr>", opts)
 
 -- gitsigns, Navigation
-keymap('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
-keymap('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+keymap('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true })
+keymap('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
 
 -- gitsigns, Actions
 keymap('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', opts)
