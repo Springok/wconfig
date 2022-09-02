@@ -10,7 +10,7 @@ telescope.setup {
     file_ignore_patterns = { "vendor/", "migrate", "snippets", "image", ".lsp/", ".clj-kondo/" },
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "shorten" },
+    path_display = { "truncate" },
     vimgrep_arguments = { "rg", "--column", "--line-number", "--no-heading", "--color=never", "--ignore" },
 
     -- layout setup copied from TJ DeVries
@@ -109,13 +109,8 @@ telescope.setup {
   },
   pickers = {
     buffers = {
-      theme = "dropdown",
-    },
-    live_grep = {
-      theme = "dropdown",
-    },
-    grep_string = {
-      theme = "dropdown",
+      theme = "ivy",
+      previewer = false,
     },
     git_files = {
       theme = "ivy",
