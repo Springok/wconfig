@@ -63,7 +63,11 @@ return packer.startup(function()
   use 'tpope/vim-unimpaired'
 
   -- Tagbar alternative
-  use 'simrat39/symbols-outline.nvim'
+  use { 'simrat39/symbols-outline.nvim',
+    config = function()
+      require("symbols-outline").setup()
+    end
+  }
 
   -- Indent
   use 'austintaylor/vim-indentobject'
