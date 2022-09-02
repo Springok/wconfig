@@ -7,25 +7,25 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {},
     always_divide_middle = true,
-    globalstatus = true,
+    globalstatus = false,
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_a = { 'mode' },
+    lualine_b = { 'diff', 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },
@@ -44,7 +44,10 @@ bufferline.setup {
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
-    indicator_icon = "▎",
+    indicator = {
+      style = 'icon',
+      icon = "▎",
+    },
     buffer_close_icon = "",
     -- buffer_close_icon = '',
     modified_icon = "●",
@@ -86,7 +89,7 @@ bufferline.setup {
     --     return true
     --   end
     -- end,
-   offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
+    offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
     show_buffer_icons = true,
     show_buffer_close_icons = false,
     show_close_icon = false,
