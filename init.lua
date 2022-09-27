@@ -56,6 +56,12 @@ null_ls.setup({
   },
 })
 
+-- Vista, not working, not sure why...
+vim.g.vista_executive_for = {
+  clj = "nvim_lsp",
+  cljs = "nvim_lsp"
+}
+
 -- ============================
 --      Settings / options
 -- ============================
@@ -327,7 +333,7 @@ keymap("n", "<leader><space>", ":call abagile#whitespace#strip_trailing()<cr>", 
 keymap("n", "<Leader>tl", ":call abagile#rails#test_tmux('h')", opts)
 keymap("n", "<Leader>tf", ":call abagile#rails#test_tmux('h', 1)", opts)
 
-keymap("n", "<Leader>]", ":SymbolsOutline<cr>", opts)
+keymap("n", "<Leader>]", ":Vista<cr>", opts)
 
 -- Spectre, search and replace
 keymap("v", "<leader>fc", "<cmd>lua require('spectre').open_visual()<CR>", opts)
