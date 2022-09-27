@@ -18,7 +18,7 @@ require "config.bufferline"
 -- ================
 --      Theme
 -- ================
-vim.g.onedark_config = {style= "warmer"}
+vim.g.onedark_config = { style = "warmer" }
 vim.cmd [[colorscheme onedark]]
 -- vim.g.vscode_style = "dark"
 -- vim.cmd [[colorscheme vscode]]
@@ -45,10 +45,12 @@ null_ls.setup({
   sources = {
     diagnostics.rubocop.with({
       command = "bundle",
-      args = vim.list_extend({ "exec", "rubocop" }, diagnostics.rubocop._opts.args) }),
+      args = vim.list_extend({ "exec", "rubocop" }, diagnostics.rubocop._opts.args)
+    }),
     formatting.rubocop.with({
       command = "bundle",
-      args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args) }),
+      args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args)
+    }),
     diagnostics.trail_space,
     -- clojure lsp supported by default
     -- diagnostics.clj_kondo,
