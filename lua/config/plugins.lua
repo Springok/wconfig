@@ -161,6 +161,10 @@ return packer.startup(function()
   use 'Olical/conjure'
   use 'clojure-vim/vim-jack-in'
 
+
+  -- Running Tests
+  use 'vim-test/vim-test'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
