@@ -161,7 +161,6 @@ return packer.startup(function()
   use 'Olical/conjure'
   use 'clojure-vim/vim-jack-in'
 
-
   -- Running Tests
   use 'vim-test/vim-test'
 

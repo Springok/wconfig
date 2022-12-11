@@ -110,7 +110,6 @@ vim.cmd [[hi Winseparator guibg=none]]
 -- vim-easy-align
 -- default ignore comment and string
 vim.g.easy_align_ignore_groups = {}
-vim.g.tmux_navigator_disable_when_zoomed = 1
 vim.g.abagile_migrant_structure_fold = 1
 
 -- indent_blankline
@@ -232,7 +231,7 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 --  Vim Tmux Navigator
-vim.g['tmux_navigator_disable_when_zoomed'] = 1
+-- vim.g['tmux_navigator_disable_when_zoomed'] = 1
 
 -- " Vim Tmux Runner
 vim.keymap.set('n', '<leader>ar', ":VtrAttachToPane<CR>")
