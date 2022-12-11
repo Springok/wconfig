@@ -67,7 +67,7 @@ cmp.setup {
     -- ["<tab>"] = cmp.config.disable,
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    -- ["<CR>"] = cmp.mapping.confirm { select = true },
+    ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -104,7 +104,7 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-        conjure = "[Conjure]",
+        -- conjure = "[Conjure]",
         nvim_lsp = "[LSP]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -114,7 +114,7 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "conjure" },
+    -- { name = "conjure" },
     { name = "nvim_lsp", Keyword_length = 5},
     { name = "buffer", Keyword_length = 8},
     { name = "luasnip", Keyword_length = 5},
