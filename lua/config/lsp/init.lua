@@ -45,11 +45,11 @@ local function lsp_highlight_document(client)
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      autocmd! * <buffer>
+      autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]],
+      ]],
       false
     )
   end
@@ -85,7 +85,7 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- local servers = { "jsonls", "sumneko_lua", "solargraph", "clojure_lsp" }
+-- local servers = { "jsonls", "sumneko_lua", "clojure_lsp", "ruby_ls" }
 local servers = { "jsonls", "sumneko_lua", "clojure_lsp" }
 
 require("nvim-lsp-installer").setup {
