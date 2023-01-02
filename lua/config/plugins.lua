@@ -44,7 +44,7 @@ return packer.startup(function()
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
-  use { "akinsho/bufferline.nvim", tag = "v2.*"}
+  use { "akinsho/bufferline.nvim", tag = "v2.*" }
   use 'nvim-lualine/lualine.nvim'
   use "moll/vim-bbye"
 
@@ -114,7 +114,7 @@ return packer.startup(function()
   use {
     'seblj/nvim-echo-diagnostics',
     config = function()
-      require("echo-diagnostics").setup{
+      require("echo-diagnostics").setup {
         show_diagnostic_number = true,
         show_diagnostic_source = false,
       }
@@ -126,8 +126,8 @@ return packer.startup(function()
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'nvim-telescope/telescope-ui-select.nvim' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -148,10 +148,10 @@ return packer.startup(function()
   use 'christoomey/vim-tmux-navigator'
   use 'christoomey/vim-tmux-runner'
 
-  use {'Mofiqul/vscode.nvim', branch = 'main' }
+  use { 'Mofiqul/vscode.nvim', branch = 'main' }
   use 'navarasu/onedark.nvim'
   use 'folke/tokyonight.nvim'
-  use {'marko-cerovac/material.nvim', branch = 'main'}
+  use { 'marko-cerovac/material.nvim', branch = 'main' }
   -- use "projekt0n/github-nvim-theme"
 
   -- Clojure, Lisp
@@ -160,9 +160,6 @@ return packer.startup(function()
   use "tpope/vim-sexp-mappings-for-regular-people"
   use 'Olical/conjure'
   use 'clojure-vim/vim-jack-in'
-
-  -- Running Tests
-  use 'vim-test/vim-test'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

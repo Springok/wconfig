@@ -335,14 +335,3 @@ keymap("n", "<Leader>]", ":Vista<cr>", opts)
 
 -- Spectre, search and replace
 keymap("v", "<leader>fc", "<cmd>lua require('spectre').open_visual()<CR>", opts)
-
--- Running tests
--- vim.g['abagile_rails_test_runner'] = 0
--- vim.g['test#strategy'] = 'vtr'
--- vim.g['test#preserve_screen'] = 1
--- vim.g['test#runner_commands'] = { 'Minitest', 'Rails' }
---
--- keymap("n", "<Leader>tl", "<cmd>TestLast<CR>", opts)
--- keymap("n", "<Leader>tf", "<cmd>TestFile<CR>", opts)
--- keymap("n", "<Leader>tn", "<cmd>TestNearest<CR>", opts)
--- keymap("n", "<Leader>tg", "<cmd>TestVisit<CR>", opts)
