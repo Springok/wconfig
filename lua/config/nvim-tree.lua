@@ -10,17 +10,21 @@ if not config_status_ok then
   return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+-- local tree_cb = nvim_tree_config.nvim_tree_callback
+
+local HEIGHT_RATIO = 0.8  -- You can change this
+local WIDTH_RATIO = 0.2   -- You can change this too
+
+-- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup
+-- local function open_nvim_tree()
+--   -- open the tree
+--   require("nvim-tree.api").tree.open()
+-- end
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
-  open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
   filters = {
     dotfiles = true,
     custom = {},
@@ -72,21 +76,47 @@ nvim_tree.setup {
       },
     },
   },
-  view = {
-    width = 30,
+   view = {
     hide_root_folder = false,
     side = "left",
+    number = false,
+    relativenumber = false,
     mappings = {
       custom_only = false,
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "x", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-        { key = "m", cb = tree_cb "rename" },
+        { key = {"<CR>", "o" }, action = "edit" },
+        { key = "x", action = "close_node" },
+        { key = "<C-c>", action = "close" },
+        { key = "h", action = "split" },
+        { key = "v", action = "vsplit" },
+        { key = "m", action = "full_rename" },
       },
     },
-    number = false,
-    relativenumber = false,
+    float = {
+      enable = false,
+      open_win_config = function()
+        local screen_w = vim.opt.columns:get()
+        local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+        local window_w = screen_w * WIDTH_RATIO
+        local window_h = screen_h * HEIGHT_RATIO
+        local window_w_int = math.floor(window_w)
+        local window_h_int = math.floor(window_h)
+        local center_x = (screen_w - window_w) / 2
+        local center_y = ((vim.opt.lines:get() - window_h) / 2)
+                         - vim.opt.cmdheight:get()
+        return {
+          border = 'rounded',
+          relative = 'editor',
+          row = center_y,
+          col = center_x,
+          width = window_w_int,
+          height = window_h_int,
+        }
+        end,
+    },
+    width = function()
+      return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+    end,
   },
   renderer = {
     icons = {
