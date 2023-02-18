@@ -86,7 +86,7 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- local servers = { "jsonls", "sumneko_lua", "clojure_lsp", "ruby_ls" }
-local servers = { "jsonls", "sumneko_lua", "clojure_lsp" }
+local servers = { "jsonls", "lua_ls", "clojure_lsp" }
 
 require("nvim-lsp-installer").setup {
   ensure_installed = servers
