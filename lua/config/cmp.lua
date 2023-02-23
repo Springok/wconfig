@@ -115,9 +115,16 @@ cmp.setup {
   },
   sources = {
     -- { name = "conjure" },
-    { name = "nvim_lsp", Keyword_length = 5},
-    { name = "buffer", Keyword_length = 8},
-    { name = "luasnip", Keyword_length = 5},
+    { name = "nvim_lsp", Keyword_length = 5 },
+    { name = "buffer",
+      Keyword_length = 8,
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end
+      }
+    },
+    { name = "luasnip",  Keyword_length = 5 },
     { name = "path" },
   },
   confirm_opts = {
