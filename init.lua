@@ -110,7 +110,7 @@ vim.cmd [[hi Winseparator guibg=none]]
 -- vim-easy-align
 -- default ignore comment and string
 vim.g.easy_align_ignore_groups = {}
-vim.g.abagile_migrant_structure_fold = 1
+-- vim.g.abagile_migrant_structure_fold = 1
 
 -- indent_blankline
 -- vim.g.indent_blankline_enabled = "v:false"
