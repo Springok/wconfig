@@ -84,7 +84,7 @@ return packer.startup(function()
 
   -- highlight parenthesis
   use "p00f/nvim-ts-rainbow"
-  use 'andymass/vim-matchup'
+  -- use 'andymass/vim-matchup' -- disable as it cause error when typing [ or ( in clj file
 
   -- CSS #fff
   use {
