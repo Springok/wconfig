@@ -93,8 +93,8 @@ local options = {
   signcolumn     = "yes",
   wildignore     = 'log/**,node_modules/**,target/**,tmp/**,*.rbc',
   list           = true,
-  foldmethod     = "expr",
-  foldexpr       = "nvim_treesitter#foldexpr()",
+  -- foldmethod     = "expr",
+  -- foldexpr       = "nvim_treesitter#foldexpr()",
 }
 
 for k, v in pairs(options) do
