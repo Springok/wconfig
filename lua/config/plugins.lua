@@ -154,6 +154,7 @@ return packer.startup(function()
   use 'folke/tokyonight.nvim'
   use { 'marko-cerovac/material.nvim', branch = 'main' }
   -- use "projekt0n/github-nvim-theme"
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Clojure, Lisp
   use "gpanders/nvim-parinfer"
