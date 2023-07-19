@@ -83,7 +83,7 @@ return packer.startup(function()
   use "nvim-treesitter/playground"
 
   -- highlight parenthesis
-  use "p00f/nvim-ts-rainbow"
+  use "HiPhish/rainbow-delimiters.nvim"
   -- use 'andymass/vim-matchup' -- disable as it cause error when typing [ or ( in clj file
 
   -- CSS #fff
